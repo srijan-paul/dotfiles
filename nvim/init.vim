@@ -37,21 +37,22 @@ nnoremap <C-6> <C-^>
 " Plugins
 call plug#begin()
   " File search and dir tree viewing
-  Plug 'junegunn/fzf'
   Plug 'preservim/NERDTree'
+  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+  " The following 3 packages are really just dependencies of telescope.nvim.
+  " NOTE: It is also recommended to have ripgrep installed.
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
   " COC!
   Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 
   " Themes and eyecandy
-  Plug 'iCyMind/NeoSolarized'
   Plug 'itchyny/lightline.vim'
-  Plug 'andreasvc/vim-256noir'
   Plug 'srijan-paul/vim-257noir'
   Plug 'romainl/flattened'
-  Plug 'NLKNguyen/papercolor-theme'
   Plug 'morhetz/gruvbox'
-  Plug 'junegunn/fzf.vim'
   Plug 'ghifarit53/tokyonight-vim'
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'preservim/nerdcommenter'
@@ -61,8 +62,6 @@ call plug#begin()
   Plug 'dracula/vim'
   Plug 'sainnhe/sonokai'
 call plug#end()
-
-" Look and feel
 
 
 " Unfortunately, I have to restart lightline every time I change
@@ -95,7 +94,7 @@ function! SwitchTheme(theme_name)
     :execute "colo flattened_dark"
     :execute "LightlineTheme solarized"
   elseif a:theme_name == "sel"
-    :execute "colo selenized"
+    :execute "colo flattened_dark"
     :execute "let g:lightline.colorscheme='solarized'"
   elseif a:theme_name == "257"
     :execute "colo 257_noir"
@@ -133,7 +132,8 @@ let g:lightline = {
 " Custom keybindings
 nnoremap gd :call CocAction('jumpDefinition')<cr>
 nnoremap gr :call CocAction('jumpReferences')<cr>
-nnoremap ff :call execute(':FZF')<cr>
+nnoremap ff <cmd>Telescope find_files<cr>
+nnoremap fg <cmd>Telescope live_grep<cr>
 
 " Use K to show documentation in preview window
 nnoremap <silent> M :call <SID>show_documentation()<CR>
