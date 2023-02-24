@@ -1,7 +1,7 @@
 set termguicolors
 
 syntax on
-filetype off
+filetype plugin on
 
 set number relativenumber
 " Whitespace
@@ -48,19 +48,23 @@ call plug#begin()
   " COC!
   Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 
+  " comments
+  Plug 'preservim/nerdcommenter'
+
   " Themes and eyecandy
+  "
   Plug 'itchyny/lightline.vim'
   Plug 'srijan-paul/vim-257noir'
   Plug 'romainl/flattened'
   Plug 'morhetz/gruvbox'
   Plug 'ghifarit53/tokyonight-vim'
   Plug 'kyazdani42/nvim-web-devicons'
-  Plug 'preservim/nerdcommenter'
   Plug 'rakr/vim-one'
   Plug 'ryanoasis/vim-devicons'
   Plug 'othree/jsdoc-syntax.vim'
   Plug 'dracula/vim'
   Plug 'sainnhe/sonokai'
+  Plug 'ntk148v/komau.vim' " Vim-plug
 call plug#end()
 
 
@@ -112,22 +116,26 @@ function! SwitchTheme(theme_name)
     :execute "colo dracula"
     :execute "LightlineTheme dracula"
   elseif a:theme_name == "sonokai"
-    :execute "colo monokai"
+    :execute "colo sonokai"
     :execute "LightlineTheme sonokai"
+  elseif a:theme_name == "komau"
+    :execute "colo komau"
+    :execute "LightlineTheme wombat"
   endif
+
   call LightlineReload()
 endfunction
 
 :command! -nargs=1 Theme :call SwitchTheme(<q-args>)
 
 set guifont=Overpass\ NF:h17'
-colo tokyonight
 set background=dark
 let g:sonokai_style = 'maia'
 let g:lightline = {
-      \ 'colorscheme' : 'tokyonight',
+      \ 'colorscheme' : 'sonokai',
       \ }
 
+colorscheme sonokai 
 
 " Custom keybindings
 nnoremap gd :call CocAction('jumpDefinition')<cr>
@@ -180,5 +188,11 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
 " Create default mappings
 let g:NERDCreateDefaultMappings = 1
 let g:NERDTrimTrailingWhitespace = 1
-" Allow commenting empty lines
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+" Allow commenting and inverting empty lines (useful when commenting a region)
 let g:NERDCommentEmptyLines = 1
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+" Enable NERDCommenterToggle to check all selected lines is commented or not 
+let g:NERDToggleCheckAllLines = 1
