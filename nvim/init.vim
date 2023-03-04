@@ -24,7 +24,7 @@ set incsearch smartcase ignorecase showmatch
 set nohlsearch
 
 if !has('gui_running')
-  " set t_Co=256
+  set t_Co=256
 endif
 
 inoremap <F1> <ESC>:set invfullscreen<CR>a
@@ -65,6 +65,7 @@ call plug#begin()
   Plug 'dracula/vim'
   Plug 'sainnhe/sonokai'
   Plug 'ntk148v/komau.vim' " Vim-plug
+  Plug 'fcpg/vim-farout'
 call plug#end()
 
 
@@ -132,10 +133,10 @@ set guifont=Overpass\ NF:h17'
 set background=dark
 let g:sonokai_style = 'maia'
 let g:lightline = {
-      \ 'colorscheme' : 'sonokai',
+      \ 'colorscheme' : 'farout',
       \ }
 
-colorscheme sonokai 
+colorscheme farout 
 
 " Custom keybindings
 nnoremap gd :call CocAction('jumpDefinition')<cr>
