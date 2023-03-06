@@ -10,6 +10,10 @@ set ts=2 sw=2 softtabstop=2 expandtab noshiftround
 set encoding=utf-8
 set nowrap
 
+" remap leader key to space
+nnoremap <SPACE> <Nop>
+let mapleader = " "
+
 " Cursor
 set matchpairs+=<:>
 set backspace=indent,eol,start
@@ -18,6 +22,7 @@ set mouse+=a
 
 set hidden
 set laststatus=2
+set cursorline
 
 " `set hlsearch` will also highlight the searches
 set incsearch smartcase ignorecase showmatch
@@ -38,18 +43,12 @@ nnoremap <C-6> <C-^>
 call plug#begin()
   " File search and dir tree viewing
   Plug 'preservim/NERDTree'
-  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
-  " The following 3 packages are really just dependencies of telescope.nvim.
-  " NOTE: It is also recommended to have ripgrep installed.
-  Plug 'nvim-lua/plenary.nvim'
-  Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
-  " COC!
-  Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 
   " comments
   Plug 'preservim/nerdcommenter'
+
+  " formatting
+  Plug 'sdiehl/vim-ormolu'
 
   " Themes and eyecandy
   "
@@ -64,8 +63,9 @@ call plug#begin()
   Plug 'othree/jsdoc-syntax.vim'
   Plug 'dracula/vim'
   Plug 'sainnhe/sonokai'
-  Plug 'ntk148v/komau.vim' " Vim-plug
   Plug 'fcpg/vim-farout'
+  Plug 'srcery-colors/srcery-vim'
+  Plug 'lukas-reineke/indent-blankline.nvim'
 call plug#end()
 
 
@@ -133,27 +133,13 @@ set guifont=Overpass\ NF:h17'
 set background=dark
 let g:sonokai_style = 'maia'
 let g:lightline = {
-      \ 'colorscheme' : 'farout',
+      \ 'colorscheme' : 'rosepine',
       \ }
 
-colorscheme farout 
 
-" Custom keybindings
-nnoremap gd :call CocAction('jumpDefinition')<cr>
-nnoremap gr :call CocAction('jumpReferences')<cr>
-nnoremap ff <cmd>Telescope find_files<cr>
-nnoremap fg <cmd>Telescope live_grep<cr>
+" invoke formatter
+nnoremap <leader>f :call RunOrmolu()<cr>
 
-" Use K to show documentation in preview window
-nnoremap <silent> M :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
 
 " NEDTree config
 " Taken from: https://github.com/preservim/nerdtree
@@ -161,16 +147,6 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
-
-"" coc-nvim autocomplete selection
-"" Used by coc.nvim for trigger completion
-function! CheckBackspace() abort
-	let col = col('.') - 1
-	return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : CheckBackspace() ? "\<Tab>" : coc#refresh()
-inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : CheckBackspace() ? "\<S-Tab>" : coc#refresh()
-inoremap <silent> <expr> <CR> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<C-r>=coc#on_enter()\<CR>"
 
 " Start NERDTree when Vim is started without file arguments.
 autocmd VimEnter * NERDTree 

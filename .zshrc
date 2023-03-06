@@ -108,7 +108,7 @@ export GITHUB_TOKEN="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"
 export EICH_TOKEN="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"
 export ZEAL_SECRET="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"
 export APP_PATH="/Users/srijan-paul/work/marvin-javascript/build"
-export CODE_PATH="/Users/srijan-paul/work/marvin-javascript/tests/scatr/autofix-intt-tests"
+export CODE_PATH="/Users/srijan-paul/work/test-repos/focalboard"
 export TOOLBOX_PATH="/Users/srijan-paul/work/toolbox"
 export GPG_TTY=$(tty)
 
