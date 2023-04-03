@@ -122,6 +122,9 @@ function! SwitchTheme(theme_name)
   elseif a:theme_name == "komau"
     :execute "colo komau"
     :execute "LightlineTheme wombat"
+  elseif a:theme_name == "rose"
+    :execute "colo rose-pine"
+    :exectue "LightlineTheme rosepine"
   endif
 
   call LightlineReload()
@@ -133,7 +136,7 @@ set guifont=Overpass\ NF:h17'
 set background=dark
 let g:sonokai_style = 'maia'
 let g:lightline = {
-      \ 'colorscheme' : 'rosepine',
+      \ 'colorscheme' : 'catppuccin',
       \ }
 
 
