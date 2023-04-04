@@ -1,5 +1,7 @@
-require('catppuccin').setup({
-  show_end_of_buffer = true,
+local theme = require('catppuccin')
+
+local theme_config = {
+  transparent_background = true,
   integrations = {
     native_lsp = {
       enabled = true,
@@ -7,16 +9,20 @@ require('catppuccin').setup({
         errors = { "italic" },
         hints = { "italic" },
         warnings = { "italic" },
-        information = { "italic" },
+        information = { "italic" }
       },
       underlines = {
         errors = { "underline" },
         hints = { "underline" },
-        warnings = { "underline" },
+        warnings = {  },
         information = { "underline" },
       },
     },
-  }
-})
+  },
+  color_overrides = {},
+}
 
+theme.setup(theme_config)
+
+vim.cmd.colorscheme "catppuccin"
 

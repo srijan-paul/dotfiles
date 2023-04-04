@@ -7,5 +7,6 @@ lsp.on_attach(function (client, bunfr)
   vim.diagnostic.config({ virtual_text = true })
 end)
 
+
 lsp.setup()
 
