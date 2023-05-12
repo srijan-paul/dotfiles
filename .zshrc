@@ -7,7 +7,10 @@ export PATH=/Applications/Neovide.app/Contents/MacOS:$PATH
 export PATH=/opt/homebrew/bin:$PATH
 export PATH=/usr/local/opt/make/libexec/gnubin:$PATH
 export PATH=/Applications/WezTerm.app/Contents/MacOS:$PATH
+export PATH=/Users/srijan-paul/google-cloud-sdk/bin:$PATH
 
+
+. "/Users/srijan-paul/secrets.sh"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/srijan-paul/.oh-my-zsh"
@@ -95,40 +98,34 @@ export EDITOR='nvim'
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-export GITHUB_TOKEN="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"
-export EICH_TOKEN="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"
-export ZEAL_SECRET="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"
-export APP_PATH="/Users/srijan-paul/work/marvin-javascript/build"
-export CODE_PATH="/Users/srijan-paul/work/test-repos/focalboard"
-export TOOLBOX_PATH="/Users/srijan-paul/work/toolbox"
-export GPG_TTY=$(tty)
+alias zshconfig="mate ~/.zshrc"
+alias gc="git commit -m"
+alias gcs="git commit -S -m"
+alias ga="git add"
+alias gp="git push"
 
 #[ -f "/Users/srijan-paul/.ghcup/env" ] && source "/Users/srijan-paul/.ghcup/env" # ghcup-env
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
-export COSMOS_DB_SECRET_URI="mongodb://natourdb:Z8U3jvnXNlRTNzyU0PMTIoVz6HEx2xdngFcVGKdKEBvXHSe4l6wDLqbhwx3ziKgfdRmwC4nqCQDlYjkNPv64wg==@natourdb.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@natourdb@"
 export VYSE_PATH="/Users/srijan-paul/personal/snap/build"
-export AUDIT_PY_PATH="/Users/srijan-paul/work/hackday/audit-tui/audit_me.py"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/srijan-paul/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/srijan-paul/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/srijan-paul/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/srijan-paul/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-# eval `luarocks path`
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ -f "/Users/srijan-paul/.ghcup/env" ] && source "/Users/srijan-paul/.ghcup/env" # ghcup-env
+
+# pnpm
+export PNPM_HOME="/Users/srijan-paul/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
