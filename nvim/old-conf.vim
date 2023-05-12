@@ -139,12 +139,7 @@ let g:lightline = {
       \ 'colorscheme' : 'catppuccin',
       \ }
 
-
-" invoke formatter
-nnoremap <leader>f :call RunOrmolu()<cr>
-
-
-" NEDTree config
+" NERDTree config
 " Taken from: https://github.com/preservim/nerdtree
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
