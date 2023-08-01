@@ -8,7 +8,12 @@ export PATH=/opt/homebrew/bin:$PATH
 export PATH=/usr/local/opt/make/libexec/gnubin:$PATH
 export PATH=/Applications/WezTerm.app/Contents/MacOS:$PATH
 export PATH=/Users/srijan-paul/google-cloud-sdk/bin:$PATH
+export PATH=/Users/srijan-paul/go/bin:$PATH
 
+# sidekick stuff
+# export SIDEKICK_BASE="https://enterprise.deepsource.icu"
+# export SIDEKICK_PUBLIC_API="https://enterprise.deepsource.icu/api/graphql/"
+# export SIDEKICK_ADDR=127.0.0.1:54370
 
 . "/Users/srijan-paul/secrets.sh"
 
@@ -129,3 +134,19 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/srijan-paul/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/srijan-paul/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/srijan-paul/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/srijan-paul/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
