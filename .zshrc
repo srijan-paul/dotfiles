@@ -1,19 +1,16 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/Users/srijan-paul/Downloads/love.app/Contents/MacOS/:$PATH
-export PATH=/Users/srijan-paul/personal/snap/build/:$PATH
-export PATH=/Users/srijan-paul/.cargo/bin:$PATH
-export PATH=/Applications/Neovide.app/Contents/MacOS:$PATH
-export PATH=/opt/homebrew/bin:$PATH
-export PATH=/usr/local/opt/make/libexec/gnubin:$PATH
-export PATH=/Applications/WezTerm.app/Contents/MacOS:$PATH
-export PATH=/Users/srijan-paul/google-cloud-sdk/bin:$PATH
-export PATH=/Users/srijan-paul/go/bin:$PATH
-
-# sidekick stuff
-# export SIDEKICK_BASE="https://enterprise.deepsource.icu"
-# export SIDEKICK_PUBLIC_API="https://enterprise.deepsource.icu/api/graphql/"
-# export SIDEKICK_ADDR=127.0.0.1:54370
+PATH=/Users/srijan-paul/Downloads/love.app/Contents/MacOS/:$PATH
+PATH=/Users/srijan-paul/personal/snap/build/:$PATH
+PATH=/Users/srijan-paul/.cargo/bin:$PATH
+PATH=/Applications/Neovide.app/Contents/MacOS:$PATH
+PATH=/opt/homebrew/bin:$PATH
+PATH=/usr/local/opt/make/libexec/gnubin:$PATH
+PATH=/Applications/WezTerm.app/Contents/MacOS:$PATH
+PATH=/Users/srijan-paul/google-cloud-sdk/bin:$PATH
+PATH=/Users/srijan-paul/go/bin:$PATH
+PATH=/Applications/love.app/Contents/MacOS:$PATH
+PATH=/Users/srijan-paul/zig:$PATH
 
 . "/Users/srijan-paul/secrets.sh"
 
@@ -108,6 +105,7 @@ alias gc="git commit -m"
 alias gcs="git commit -S -m"
 alias ga="git add"
 alias gp="git push"
+alias pm="podman"
 
 #[ -f "/Users/srijan-paul/.ghcup/env" ] && source "/Users/srijan-paul/.ghcup/env" # ghcup-env
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
@@ -153,7 +151,6 @@ unset __conda_setup
 
 # bun completions
 [ -s "/Users/srijan-paul/.bun/_bun" ] && source "/Users/srijan-paul/.bun/_bun"
--e 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
