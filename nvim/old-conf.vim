@@ -5,7 +5,7 @@ filetype plugin on
 
 set number relativenumber
 " Whitespace
-set ts=2 sw=2 softtabstop=2 expandtab noshiftround
+set noshiftround
 
 set encoding=utf-8
 set nowrap
