@@ -41,11 +41,8 @@ nnoremap <C-6> <C-^>
 
 " Plugins
 call plug#begin()
-  " comments
-  Plug 'preservim/nerdcommenter'
-
   " formatting
-  Plug 'sdiehl/vim-ormolu'
+  " Plug 'sdiehl/vim-ormolu'
 
   " Themes and eyecandy
   "
@@ -54,18 +51,12 @@ call plug#begin()
   Plug 'morhetz/gruvbox'
   Plug 'ghifarit53/tokyonight-vim'
   Plug 'kyazdani42/nvim-web-devicons'
-  Plug 'rakr/vim-one'
   Plug 'ryanoasis/vim-devicons'
   Plug 'othree/jsdoc-syntax.vim'
-  Plug 'dracula/vim'
-  Plug 'sainnhe/sonokai'
   Plug 'fcpg/vim-farout'
   Plug 'srcery-colors/srcery-vim'
-  Plug 'lukas-reineke/indent-blankline.nvim'
 call plug#end()
 
-
-set guifont=Overpass\ NF:h17'
 set background=dark
 let g:sonokai_style = 'maia'
 

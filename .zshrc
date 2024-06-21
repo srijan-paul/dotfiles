@@ -22,7 +22,7 @@ export ZSH="/Users/srijan-paul/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #  themes: skaro, edvardm, gozilla, mgutz , wuffers(z?), agnoster, robbyrussell, xiong-chiamiov, half-life
-ZSH_THEME="half-life"
+ZSH_THEME="gozilla"
 
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
@@ -60,6 +60,7 @@ alias gcs="git commit -S -m"
 alias ga="git add"
 alias gp="git push"
 alias pm="podman"
+alias zbr="zig build run"
 
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
@@ -104,10 +105,18 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-
 # bun completions
 [ -s "/Users/srijan-paul/.bun/_bun" ] && source "/Users/srijan-paul/.bun/_bun"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export PATH="/opt/homebrew/opt/qt@5/bin:$PATH"
+
+# fnm setup
+eval $(fnm env)
+export CPLUS_INCLUDE_PATH="${CPLUS_INCLUDE_PATH:+${CPLUS_INCLUDE_PATH}:}/opt/homebrew/include"
+export LIBRARY_PATH="$LIBRARY_PATH:/opt/homebrew/lib"
+export PATH="/opt/homebrew/opt/mariadb@10.6/bin:$PATH"
 

@@ -18,6 +18,7 @@ return require('packer').startup(function(use)
 		requires = { { 'nvim-lua/plenary.nvim' } }
 	}
 
+
 	use {
 		"windwp/nvim-autopairs",
 		config = function() require("nvim-autopairs").setup {} end
@@ -47,10 +48,10 @@ return require('packer').startup(function(use)
 		}
 	}
 
+	-- color themes
 	use { "catppuccin/nvim", as = "catppuccin" }
+	use 'cseelus/vim-colors-lucid'
 	use "rebelot/kanagawa.nvim"
-	use "frigoeu/psc-ide-vim"
-	use "purescript-contrib/purescript-vim"
 
 	use {
 		"nvim-neo-tree/neo-tree.nvim",
@@ -90,4 +91,7 @@ return require('packer').startup(function(use)
 	}
 
 	use { 'github/copilot.vim' }
+	use 'datsfilipe/vesper.nvim'
+	use 'purescript-contrib/purescript-vim'
+	use 'lervag/vimtex'
 end)
