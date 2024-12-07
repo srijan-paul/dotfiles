@@ -118,5 +118,4 @@ export PATH="/opt/homebrew/opt/qt@5/bin:$PATH"
 eval $(fnm env)
 export CPLUS_INCLUDE_PATH="${CPLUS_INCLUDE_PATH:+${CPLUS_INCLUDE_PATH}:}/opt/homebrew/include"
 export LIBRARY_PATH="$LIBRARY_PATH:/opt/homebrew/lib"
-export PATH="/opt/homebrew/opt/mariadb@10.6/bin:$PATH"
 

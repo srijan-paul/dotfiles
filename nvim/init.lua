@@ -6,7 +6,7 @@ _G.vim = _G.vim
 -- source the old vimrc.
 -- I haven't yet moved from vimscript to Lua completely.
 vim.cmd 'source ~/.config/nvim/old-conf.vim'
-vim.cmd.colorscheme 'vesper'
+vim.cmd.colorscheme 'rose-pine'
 
 vim.o.tabstop = 2       -- 1 tab = 2 space
 vim.o.expandtab = false -- dont convert tab 2 space
