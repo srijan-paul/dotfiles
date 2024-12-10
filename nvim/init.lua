@@ -30,19 +30,30 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern =  "markdown",
+	pattern = "markdown",
 	command = "set conceallevel=2 | set spell"
 })
 
 -- No underline
-
 vim.diagnostic.config({
 	underline = false,
 })
 
 -- open a notes file on <leader>n (https://vimtricks.com/p/quickly-access-project-notes/)
 map("n", "<Leader>n", ":tab drop tmp/notes.md<CR>")
+
+-- Neotree keybinds
 map("n", "<C-t>", ":Neotree toggle <CR>")
-map("n", "<Leader>t", ":Neotree toggle <CR>")
 map("n", "<Leader>tt", ":Neotree focus <CR>")
 map("n", "<Leader>fr", ":LspZeroFormat <CR>")
+
+-- FZF lua keybinds
+local km = vim.keymap
+local fzf = require("fzf-lua")
+km.set("n", "<Leader>ff", fzf.files, { desc = "Fzf files" })
+km.set("n", "<Leader>fg", fzf.live_grep, { desc = "Live grep" })
+km.set("n", "<Leader>qf", fzf.quickfix, { desc = "Quick fixes" })
+km.set("n", "<Leader>gs", fzf.lsp_document_symbols, { desc = "Symbols in document" })
+km.set("n", "<Leader>ls", fzf.buffers, { desc = "Open buffers" })
+km.set("n", "<Leader>gt", fzf.git_status, { desc = "Git status" })
+km.set("n", "<Leader>m", fzf.marks, { desc = "Marks" })

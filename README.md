@@ -16,11 +16,11 @@ Currently, I use:
   ```sh
   cd dotfiles
   mkdir -p ~/.config
-  ln -s $(pwd)/coc     $HOME/.config/coc/
-  ln -s $(pwd)/nvim    $HOME/.config/nvim/
-  ln -s $(pwd)/kitty   $HOME/.config/kitty/
-  ln -s $(pwd)/fish    $HOME/.config/fish/
-  ln -s $(pwd)/.zshrc  $HOME/.zshrc/
+  ln -s $(pwd)/coc     $HOME/.config/coc
+  ln -s $(pwd)/nvim    $HOME/.config/nvim
+  ln -s $(pwd)/kitty   $HOME/.config/kitty
+  ln -s $(pwd)/fish    $HOME/.config/fish
+  ln -s $(pwd)/.zshrc  $HOME/.zshrc
   ```
 
 2. Install neovim and [packer.nvim](https://github.com/wbthomason/packer.nvim),

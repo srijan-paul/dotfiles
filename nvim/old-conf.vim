@@ -19,7 +19,7 @@ let mapleader = " "
 set matchpairs+=<:>
 set backspace=indent,eol,start
 set scrolloff=3
-set mouse+=a
+set mouse+=va
 
 set hidden
 set laststatus=2
