@@ -46,12 +46,13 @@ map("n", "<Leader>n", ":tab drop tmp/notes.md<CR>")
 map("n", "<C-t>", ":Neotree toggle <CR>")
 map("n", "<Leader>tt", ":Neotree focus <CR>")
 map("n", "<Leader>fr", ":LspZeroFormat <CR>")
+map("n", "<C-n>", ":tabnew <CR>")
 
 -- FZF lua keybinds
 local km = vim.keymap
 local fzf = require("fzf-lua")
 km.set("n", "<Leader>ff", fzf.files, { desc = "Fzf files" })
-km.set("n", "<Leader>fg", fzf.live_grep, { desc = "Live grep" })
+km.set("n", "<Leader>fg", fzf.live_grep_native, { desc = "Live grep" })
 km.set("n", "<Leader>qf", fzf.quickfix, { desc = "Quick fixes" })
 km.set("n", "<Leader>gs", fzf.lsp_document_symbols, { desc = "Symbols in document" })
 km.set("n", "<Leader>ls", fzf.buffers, { desc = "Open buffers" })
