@@ -13,6 +13,11 @@ return require('packer').startup(function(use)
 	})
 
 	use {
+		"johmsalas/text-case.nvim",
+		config = function() require('textcase').setup {} end
+	}
+
+	use {
 		"ibhagwan/fzf-lua",
 		requires = { "nvim-tree/nvim-web-devicons" }
 	}

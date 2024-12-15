@@ -58,3 +58,8 @@ km.set("n", "<Leader>gs", fzf.lsp_document_symbols, { desc = "Symbols in documen
 km.set("n", "<Leader>ls", fzf.buffers, { desc = "Open buffers" })
 km.set("n", "<Leader>gt", fzf.git_status, { desc = "Git status" })
 km.set("n", "<Leader>m", fzf.marks, { desc = "Marks" })
+
+-- Text-case keybinds
+local textcase = require("textcase");
+km.set("n", "<Leader>toc", function() textcase.current_word('to_camel_case') end)
+km.set("n", "<Leader>tos", function() textcase.current_word('to_snake_case') end)
