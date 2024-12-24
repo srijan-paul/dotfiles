@@ -38,4 +38,10 @@ fish_add_path /opt/homebrew/bin
 # GHCUP
 # Honestly, ghcup takes up WAY too much space (~5G on a fresh install).
 fish_add_path "$HOME/.ghcup/bin/"
+set --export JAM_TESTS_262_DIR "$HOME/code/test262-parser-tests"
+
+# FNM (for switching between nodejs versions)
+set -x FNM_PATH "$HOME/Library/Application Support/fnm"
+fish_add_path "$FNM_PATH"
+eval $(fnm env)
 
