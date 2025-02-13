@@ -1,6 +1,6 @@
 require('rose-pine').setup({
   --- @usage 'auto'|'main'|'moon'|'dawn'
-  variant = 'auto',
+  variant = 'main',
   --- @usage 'main'|'moon'|'dawn'
   dark_variant = 'main',
   bold_vert_split = false,
@@ -43,6 +43,5 @@ require('rose-pine').setup({
   }
 })
 
--- Set colorscheme after options
 vim.cmd('colorscheme rose-pine')
 

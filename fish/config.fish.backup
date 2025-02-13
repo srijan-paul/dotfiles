@@ -48,24 +48,8 @@ eval $(fnm env)
 set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PATH "$VOLTA_HOME/bin" $PATH
 
-if test (uname) = "Darwin"
-    # Gcloud stuff
-    # Gcloud SDK (For prasso)
-    fish_add_path "$HOME/.yen/bin"
-    fish_add_path "$HOME/third-party/google-cloud-sdk/bin"
-    # The next line updates PATH for the Google Cloud SDK.
-    if [ -f '/Users/injuly/third-party/google-cloud-sdk/path.fish.inc' ]
-        . "/Users/injuly/third-party/google-cloud-sdk/path.fish.inc"
-    end
-
-    set -gx CLOUDSDK_PYTHON "$HOME/.yen_pythons/3.11.11/python/bin/python3"
-    # Helper scripts for prasso work
-    fish_add_path "$HOME/prasso/utils"
-end
-
-# Gope
-fish_add_path $(go env GOPATH)
-fish_add_path $(go env GOPATH)/bin
-
-
+# Gcloud SDK (For prasso)
+fish_add_path "$HOME/third-party/google-cloud-sdk/bin"
+# Yen (python version switcher)
+fish_add_path "$HOME/.yen/bin"
 
