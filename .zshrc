@@ -80,7 +80,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-[ -f "/Users/srijan-paul/.ghcup/env" ] && source "/Users/srijan-paul/.ghcup/env" # ghcup-env
 
 # pnpm
 export PNPM_HOME="/Users/srijan-paul/Library/pnpm"
@@ -119,3 +118,5 @@ eval $(fnm env)
 export CPLUS_INCLUDE_PATH="${CPLUS_INCLUDE_PATH:+${CPLUS_INCLUDE_PATH}:}/opt/homebrew/include"
 export LIBRARY_PATH="$LIBRARY_PATH:/opt/homebrew/lib"
 
+
+[ -f "/Users/injuly/.ghcup/env" ] && . "/Users/injuly/.ghcup/env" # ghcup-env

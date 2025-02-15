@@ -1,0 +1,7 @@
+theme = rose-pine
+window-padding-x = 20
+window-padding-y = 20
+font-size = 18
+cursor-style-blink = false
+cursor-style = block
+cursor-invert-fg-bg = true
