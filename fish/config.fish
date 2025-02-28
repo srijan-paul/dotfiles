@@ -53,6 +53,10 @@ if test (uname) = "Darwin"
     # Gcloud SDK (For prasso)
     fish_add_path "$HOME/.yen/bin"
     fish_add_path "$HOME/third-party/google-cloud-sdk/bin"
+
+    # Needed for some scripts I use to test prasso stuff
+    set -x PRASSO_BACK_REPO_PATH "$HOME/prasso/back"
+
     # The next line updates PATH for the Google Cloud SDK.
     if [ -f '/Users/injuly/third-party/google-cloud-sdk/path.fish.inc' ]
         . "/Users/injuly/third-party/google-cloud-sdk/path.fish.inc"
@@ -61,6 +65,7 @@ if test (uname) = "Darwin"
     set -gx CLOUDSDK_PYTHON "$HOME/.yen_pythons/3.11.11/python/bin/python3"
     # Helper scripts for prasso work
     fish_add_path "$HOME/prasso/utils"
+
 end
 
 # Gope
