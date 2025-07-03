@@ -6,8 +6,6 @@ Currently, I use:
 - [Kitty](https://sw.kovidgoyal.net/kitty/) (sometimes Ghostty)
 - [Neovim](https://neovim.io/)
 - [Fish shell](https://fishshell.com/)
-- [OhMyZsh](https://ohmyz.sh/)
-
 
 ## Installation
 
