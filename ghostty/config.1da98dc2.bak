@@ -5,4 +5,3 @@ font-size = 18
 cursor-style-blink = false
 cursor-style = block
 cursor-invert-fg-bg = true
-keybind = shift+enter=text:\n
