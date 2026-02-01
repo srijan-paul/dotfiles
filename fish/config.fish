@@ -79,7 +79,8 @@ else
     if not string match -q -- $PNPM_HOME $PATH
       set -gx PATH "$PNPM_HOME" $PATH
     end
-
+    
+    alias k kubectl
 end
 
 # Added by volta installer (i think).
