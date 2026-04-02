@@ -81,6 +81,8 @@ else
     end
     
     alias k kubectl
+    alias kdev 'kubectl -n dev'
+    alias kpro 'kubectl -n prod'
 end
 
 # Added by volta installer (i think).
@@ -90,3 +92,10 @@ set -gx PATH "$VOLTA_HOME/bin" $PATH
 # Jam: a WIP js toolchain I'm working on.
 set --export JAM_TESTS_262_DIR "$HOME/code/test262-parser-tests"
 
+
+# pnpm
+set -gx PNPM_HOME "/Users/srijan/Library/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end

@@ -82,6 +82,14 @@ require('mason-lspconfig').setup({
     },
 })
 
+vim.lsp.config["zls"] = {
+    cmd = { "zls" },
+    filetypes = { "zig" },
+    root_markers = { 'build.zig' }
+}
+
+vim.lsp.enable('zls')
+
 
 -- LSP Autocompletions
 local cmp = require('cmp')
@@ -111,4 +119,3 @@ cmp.setup({
         end,
     },
 })
-

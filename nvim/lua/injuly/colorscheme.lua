@@ -44,28 +44,28 @@ require('rose-pine').setup({
 })
 
 
-local function is_macos()
-    return vim.loop.os_uname().sysname == "Darwin"
-end
+-- local function is_macos()
+--     return vim.loop.os_uname().sysname == "Darwin"
+-- end
+--
+-- --- Check if macOS is in dark mode
+-- local function mac_is_dark()
+--     if not is_macos() then
+--         return false
+--     end
+--     local handle = io.popen('defaults read -g AppleInterfaceStyle 2>/dev/null')
+--     local result = handle:read("*a")
+--     handle:close()
+--     return result:match("Dark") ~= nil
+-- end
 
---- Check if macOS is in dark mode
-local function mac_is_dark()
-    if not is_macos() then
-        return false
-    end
-    local handle = io.popen('defaults read -g AppleInterfaceStyle 2>/dev/null')
-    local result = handle:read("*a")
-    handle:close()
-    return result:match("Dark") ~= nil
-end
-
-local is_mac = is_macos()
-if is_mac and mac_is_dark() then
+-- local is_mac = is_macos()
+-- if is_mac and mac_is_dark() then
     vim.o.background = 'dark'
     vim.cmd.colorscheme('rose-pine')
-elseif not is_mac then
-    vim.o.background = 'dark'
-else
-    vim.o.background = 'light'
-    vim.cmd.colorscheme('zenbones')
-end
+-- elseif not is_mac then
+--     vim.o.background = 'dark'
+-- else
+-- vim.o.background = 'light'
+-- vim.cmd.colorscheme('zenbones')
+-- end
